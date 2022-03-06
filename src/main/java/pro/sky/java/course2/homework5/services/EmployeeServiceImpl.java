@@ -16,6 +16,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     List<Employee> employees = new ArrayList<>();
     int volume = 3;
 
+    @Override
+    public List<Employee> getListOfEmployees() {
+        return employees;
+    }
+
+    @Override
     public void addEmployee(Employee employee) {
 
         if (employees.size() == volume) {
@@ -28,6 +34,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employees.add(employee);
     }
 
+    @Override
     public void removeEmployee(Employee employee) {
         if (!employees.contains(employee)) {
             throw new EmployeeNotFoundException("Сотрудник не найден.");
@@ -35,6 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employees.remove(employee);
     }
 
+    @Override
     public void findEmployee(Employee employee) {
         if (!employees.contains(employee)) {
             throw new EmployeeNotFoundException("Сотрудник не найден.");
