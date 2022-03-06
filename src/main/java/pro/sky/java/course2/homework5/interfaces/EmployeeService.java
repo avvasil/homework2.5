@@ -8,9 +8,9 @@ public interface EmployeeService {
 
     void addEmployee(Employee employee);
 
-    void removeEmployee(Employee employee);
+    Employee removeEmployee(Employee employee);
 
-    void findEmployee(Employee employee);
+    Employee findEmployee(Employee employee);
 
     List<Employee> getListOfEmployees();
 }
